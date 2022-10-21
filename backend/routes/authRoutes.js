@@ -21,7 +21,7 @@ const loginSchema = Joi.object({
 
 const router = express.Router();
 
-router.get("/login", validator.body(loginSchema), postLogin);
+router.post("/login", validator.body(loginSchema), postLogin);
 router.post("/register", validator.body(registerSchema), postRegister);
 
 router.get("/user", authMiddleware, async (req, res) => {
